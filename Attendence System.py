@@ -17,7 +17,7 @@ for filename in os.listdir(known_faces_dir):
         known_faces.append(encoding)
         known_names.append(filename.split('.')[0])
 
-# Function to capture image
+# Function to capture Image
 def capture_image():
     cam = cv2.VideoCapture(0)
     while True:
@@ -45,7 +45,7 @@ def recognize_face(captured_image):
         return known_names[first_match_index]
     return None
 
-# Function to mark attendance
+# Function to mark Attendance
 def mark_attendance(student_name, file='attendance.xlsx'):
     now = datetime.now()
     current_date = now.strftime("%Y-%m-%d")
@@ -58,7 +58,7 @@ def mark_attendance(student_name, file='attendance.xlsx'):
     df = pd.concat([df, new_record_df], ignore_index=True)
     df.to_excel(file, index=False)
 
-# Main execution
+# Main Execution
 def main():
     image = capture_image()
     if image is None:
